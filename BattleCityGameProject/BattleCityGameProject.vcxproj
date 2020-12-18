@@ -145,11 +145,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BattleCityGameProject.cpp" />
-    <ClCompile Include="Game.cpp" />
+    <None Include="config\window.ini" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h" />
+    <ClCompile Include="BattleCityGameProject.cpp" />
+    <ClCompile Include="engine\Game.cpp" />
+    <ClCompile Include="entities\Entity.cpp" />
+    <ClCompile Include="state\GameState.cpp" />
+    <ClCompile Include="state\MainMenu.cpp" />
+    <ClCompile Include="state\State.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="engine\Game.h" />
+    <ClInclude Include="entities\Entity.h" />
+    <ClInclude Include="state\GameState.h" />
+    <ClInclude Include="state\MainMenu.h" />
+    <ClInclude Include="state\State.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

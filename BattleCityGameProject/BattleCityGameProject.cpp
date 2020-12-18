@@ -1,17 +1,10 @@
-#include <iostream>
-#include "Game.h"
+#include "engine/Game.h"
 
 int main() {
 	//Init game engine
 	Game game;
+	game.run();
 	//Game loop
-	while (game.runing()) {
-
-		//Update
-		game.update();
-
-		//Render
-		game.render();
-	}
+	
 	return 0;
 }

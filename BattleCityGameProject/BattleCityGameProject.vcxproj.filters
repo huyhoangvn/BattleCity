@@ -1,30 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="config">
+      <UniqueIdentifier>{169813a9-d19f-460a-a5c6-24b232147a25}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="engine">
+      <UniqueIdentifier>{c5029fa5-cfde-4fc3-9ed3-e51ebfcbb079}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="state">
+      <UniqueIdentifier>{4c3c0f5d-23da-47de-8a79-1ec3b3b9008c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entities">
+      <UniqueIdentifier>{e8634c8e-a7f1-410d-ab97-8b7b6bf86da2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BattleCityGameProject.cpp">
-      <Filter>Source Files</Filter>
+    <None Include="config\window.ini">
+      <Filter>config</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BattleCityGameProject.cpp" />
+    <ClCompile Include="engine\Game.cpp">
+      <Filter>engine</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="state\State.cpp">
+      <Filter>state</Filter>
+    </ClCompile>
+    <ClCompile Include="state\GameState.cpp">
+      <Filter>state</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\Entity.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="state\MainMenu.cpp">
+      <Filter>state</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="engine\Game.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\Entity.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="state\GameState.h">
+      <Filter>state</Filter>
+    </ClInclude>
+    <ClInclude Include="state\MainMenu.h">
+      <Filter>state</Filter>
+    </ClInclude>
+    <ClInclude Include="state\State.h">
+      <Filter>state</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
