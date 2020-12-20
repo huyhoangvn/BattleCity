@@ -8,18 +8,19 @@ class GameState : public State
 private:
 
 protected:
-	Entity player;
+	Player *player;
 
 	//function
 	void initKeybinds();
+	void initTexture();
+	void initPlayer();
 public:
-	GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys);
+	GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*> *states);
 	virtual ~GameState();
 
 	//Function 
 	virtual void updateInput(const float& dt);
 	virtual void updatePlayerInput(const float& dt);
-	void endState();
 	void update(const float& dt);
 	void render(sf::RenderTarget* target);
 };

@@ -2,7 +2,7 @@
 #define GAME_H
 
 #include "../state/State.h"
-#include "../state/GameState.h"
+#include "../state/MainMenu.h"
 
 /*
 	Class act as the game engine
@@ -18,6 +18,9 @@ protected:
 	//Window
 	sf::RenderWindow* window;
 	sf::Event event;
+	std::vector<sf::VideoMode> videoMode;
+	sf::ContextSettings windowSetting;
+	bool fullscreen;
 	//Render 
 	sf::Clock dtClock;
 	float dt;//delta time for frame rate 

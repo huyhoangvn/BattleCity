@@ -1,19 +1,43 @@
 #include "Entity.h"
 
+
+void Entity::initVariable()
+{
+	this->texture = nullptr;
+	this->sprite = nullptr; 
+	this->movementSpeed = 200;
+}
+
 Entity::Entity()
 {
-	this->shape.setSize(sf::Vector2f(50.f, 50.f));
-	this->shape.setFillColor(sf::Color::Magenta);
-	this->movementSpeed = 100.f;
+	this->initVariable();
 }
 
 Entity::~Entity()
 {
+	delete this->sprite;
+	//Texture is from outside
+}
+
+void Entity::createSprite(sf::Texture* texture)
+{
+	this->texture = texture;
+	this->sprite = new sf::Sprite(*this->texture);
 }
 
 void Entity::move(const float& dt, const float xDir, const float yDir)
 {
-	this->shape.move(xDir * movementSpeed * dt, yDir * movementSpeed * dt);
+	if (this->sprite) {
+		this->sprite->move(xDir * movementSpeed * dt, yDir * movementSpeed * dt);
+	}
+}
+
+
+void Entity::setPosition(const float x, const float y)
+{
+	if (this->sprite) {
+		this->sprite->setPosition(x, y);
+	}
 }
 
 void Entity::update(const float& dt)
@@ -23,6 +47,7 @@ void Entity::update(const float& dt)
 
 void Entity::render(sf::RenderTarget* target)
 {
-	target->draw(this->shape);
+	if (this->sprite) {
+		target->draw(*this->sprite);
+	}
 }
-

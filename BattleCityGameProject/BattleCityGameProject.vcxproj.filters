@@ -13,9 +13,42 @@
     <Filter Include="entities">
       <UniqueIdentifier>{e8634c8e-a7f1-410d-ab97-8b7b6bf86da2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="resources">
+      <UniqueIdentifier>{720cafb1-29c7-4d55-b2e5-e84cce5e505d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources\fonts">
+      <UniqueIdentifier>{54db7189-e308-4da2-8016-043220b5d2ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources\button">
+      <UniqueIdentifier>{580e5766-030a-481e-88e0-8d0f1d2cfcde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources\shape">
+      <UniqueIdentifier>{14fb2023-35e9-458d-afa2-42528c9125c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources\images">
+      <UniqueIdentifier>{5f23316a-bde8-4bc7-8ef9-167dfecc3cf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources\images\backgrounds">
+      <UniqueIdentifier>{32187c4a-4d19-4543-855f-d76e429dbf35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources\images\sprites">
+      <UniqueIdentifier>{e94e998e-36f7-43ab-89d2-c809aa145938}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources\images\sprites\player">
+      <UniqueIdentifier>{815f4c33-8f6e-4b8f-8ab7-bf7615c239a1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="config\window.ini">
+      <Filter>config</Filter>
+    </None>
+    <None Include="config\supported_keys.ini">
+      <Filter>config</Filter>
+    </None>
+    <None Include="config\gamestate_keys.ini">
+      <Filter>config</Filter>
+    </None>
+    <None Include="config\mainmenu_keys.ini">
       <Filter>config</Filter>
     </None>
   </ItemGroup>
@@ -36,6 +69,15 @@
     <ClCompile Include="state\MainMenu.cpp">
       <Filter>state</Filter>
     </ClCompile>
+    <ClCompile Include="resources\button\Button.cpp">
+      <Filter>resources\button</Filter>
+    </ClCompile>
+    <ClCompile Include="resources\shape\RoundRectangleShape.cpp">
+      <Filter>resources\shape</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\Player.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\Game.h">
@@ -53,5 +95,27 @@
     <ClInclude Include="state\State.h">
       <Filter>state</Filter>
     </ClInclude>
+    <ClInclude Include="resources\button\Button.h">
+      <Filter>resources\button</Filter>
+    </ClInclude>
+    <ClInclude Include="resources\shape\RoundRectangleShape.h">
+      <Filter>resources\shape</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\Player.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="resources\fonts\ARCADECLASSIC.TTF">
+      <Filter>resources\fonts</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\images\background\mainmenu_background.png">
+      <Filter>resources\images\backgrounds</Filter>
+    </Image>
+    <Image Include="resources\sprites\player\test.png">
+      <Filter>resources\images\sprites\player</Filter>
+    </Image>
   </ItemGroup>
 </Project>

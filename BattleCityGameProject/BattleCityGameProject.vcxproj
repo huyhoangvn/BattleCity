@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutioDir)SFML\bin;$(SolutionDir)SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,12 +145,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="config\gamestate_keys.ini" />
+    <None Include="config\mainmenu_keys.ini" />
+    <None Include="config\supported_keys.ini" />
     <None Include="config\window.ini" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BattleCityGameProject.cpp" />
     <ClCompile Include="engine\Game.cpp" />
     <ClCompile Include="entities\Entity.cpp" />
+    <ClCompile Include="entities\Player.cpp" />
+    <ClCompile Include="resources\button\Button.cpp" />
+    <ClCompile Include="resources\shape\RoundRectangleShape.cpp" />
     <ClCompile Include="state\GameState.cpp" />
     <ClCompile Include="state\MainMenu.cpp" />
     <ClCompile Include="state\State.cpp" />
@@ -158,9 +164,19 @@
   <ItemGroup>
     <ClInclude Include="engine\Game.h" />
     <ClInclude Include="entities\Entity.h" />
+    <ClInclude Include="entities\Player.h" />
+    <ClInclude Include="resources\button\Button.h" />
+    <ClInclude Include="resources\shape\RoundRectangleShape.h" />
     <ClInclude Include="state\GameState.h" />
     <ClInclude Include="state\MainMenu.h" />
     <ClInclude Include="state\State.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="resources\fonts\ARCADECLASSIC.TTF" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="resources\images\background\mainmenu_background.png" />
+    <Image Include="resources\sprites\player\test.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
