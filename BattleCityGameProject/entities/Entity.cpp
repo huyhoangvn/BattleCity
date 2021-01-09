@@ -3,51 +3,76 @@
 
 void Entity::initVariable()
 {
-	this->texture = nullptr;
-	this->sprite = nullptr; 
-	this->movementSpeed = 200;
+}
+
+void Entity::initComponent()
+{
+	this->movementComponent = nullptr;
+	this->animationComponent = nullptr;
+	this->hitboxComponent = nullptr;
+	this->hpbarComponent = nullptr;
 }
 
 Entity::Entity()
 {
 	this->initVariable();
+	this->initComponent();
 }
 
 Entity::~Entity()
 {
-	delete this->sprite;
-	//Texture is from outside
+	delete this->hitboxComponent;
+	delete this->movementComponent;
+	delete this->animationComponent;
+	delete this->hpbarComponent;
 }
 
-void Entity::createSprite(sf::Texture* texture)
+void Entity::setTexture(sf::Texture &texture)
 {
-	this->texture = texture;
-	this->sprite = new sf::Sprite(*this->texture);
+	//Loading Texture take long time so ptr to prevent duplicate texture
+	this->sprite.setTexture(texture);
 }
 
-void Entity::move(const float& dt, const float xDir, const float yDir)
+void Entity::createMovementComponent(const float maxVelocity, const float acceleration, const float deceleration)
 {
-	if (this->sprite) {
-		this->sprite->move(xDir * movementSpeed * dt, yDir * movementSpeed * dt);
-	}
+	this->movementComponent = new MovementComponent(this->sprite, maxVelocity, acceleration, deceleration);
 }
 
+void Entity::createAnimationComponent(sf::Texture& textureSheet)
+{
+	this->animationComponent = new AnimationComponent(this->sprite, textureSheet);
+}
+
+void Entity::createHitboxComponent(sf::Sprite& sprite, 
+	float xOffset, float yOffset, float width, float height)
+{
+	this->hitboxComponent = new HitboxComponent(sprite, xOffset, yOffset, width, height);
+}
+
+void Entity::createHpbarComponent(float maxHp,
+	sf::Sprite& sprite, float xOffset, float yOffset, 
+	float width, float height)
+{
+	this->hpbarComponent = new HpbarComponent(maxHp, sprite, xOffset, yOffset, width, height);
+}
 
 void Entity::setPosition(const float x, const float y)
 {
-	if (this->sprite) {
-		this->sprite->setPosition(x, y);
-	}
+	this->sprite.setPosition(x, y);
 }
 
 void Entity::update(const float& dt)
 {
-
 }
 
-void Entity::render(sf::RenderTarget* target)
+void Entity::render(sf::RenderTarget& target)
 {
-	if (this->sprite) {
-		target->draw(*this->sprite);
+	target.draw(this->sprite);
+
+	if (this->hitboxComponent) {
+		this->hitboxComponent->render(target);
+	}
+	if (this->hpbarComponent) {
+		this->hpbarComponent->render(target);
 	}
 }

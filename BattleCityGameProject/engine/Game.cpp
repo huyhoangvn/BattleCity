@@ -158,7 +158,7 @@ void Game::update()
 
 void Game::render()
 {
-	this->window->clear();
+	this->window->clear(sf::Color::White);
 
 	//Draw game object
 	if (!this->states.empty()) {

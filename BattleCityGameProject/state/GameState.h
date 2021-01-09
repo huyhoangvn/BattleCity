@@ -8,7 +8,8 @@ class GameState : public State
 private:
 
 protected:
-	Player *player;
+	Player* player1;
+	Player* player2;
 
 	//function
 	void initKeybinds();
@@ -20,7 +21,7 @@ public:
 
 	//Function 
 	virtual void updateInput(const float& dt);
-	virtual void updatePlayerInput(const float& dt);
+	virtual void updatePlayerInput();
 	void update(const float& dt);
 	void render(sf::RenderTarget* target);
 };

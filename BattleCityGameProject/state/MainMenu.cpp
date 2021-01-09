@@ -124,7 +124,7 @@ void MainMenu::update(const float& dt)
 	this->updateButton(this->mousePosView);
 }
 
-void MainMenu::renderButton(sf::RenderTarget* target)
+void MainMenu::renderButton(sf::RenderTarget& target)
 {
 	for (auto& itr : this->button) {
 		itr.second->render(target);
@@ -139,5 +139,5 @@ void MainMenu::render(sf::RenderTarget* target)
 	//if dont have target then render window
 	target->draw(this->background);
 	target->draw(this->introTitle);
-	this->renderButton(target);
+	this->renderButton(*target);
 }

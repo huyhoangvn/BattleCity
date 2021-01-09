@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -72,6 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(SystemRoot)\system32;$(SystemRoot);$(SystemRoot)\System32\Wbem;$(SystemRoot)\System32\WindowsPowerShell\v1.0\;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -152,30 +153,54 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BattleCityGameProject.cpp" />
+    <ClCompile Include="components\animation_components\Animation.cpp" />
+    <ClCompile Include="components\animation_components\AnimationComponent.cpp" />
+    <ClCompile Include="components\hitbox_components\HitboxComponent.cpp" />
+    <ClCompile Include="components\hpbar_components\HpbarComponent.cpp" />
+    <ClCompile Include="components\movement_components\MovementComponent.cpp" />
     <ClCompile Include="engine\Game.cpp" />
+    <ClCompile Include="entities\Bonus.cpp" />
+    <ClCompile Include="entities\Brick.cpp" />
+    <ClCompile Include="entities\Enemy.cpp" />
     <ClCompile Include="entities\Entity.cpp" />
     <ClCompile Include="entities\Player.cpp" />
+    <ClCompile Include="entities\Throwable.cpp" />
+    <ClCompile Include="entities\Tree.cpp" />
     <ClCompile Include="resources\button\Button.cpp" />
-    <ClCompile Include="resources\shape\RoundRectangleShape.cpp" />
     <ClCompile Include="state\GameState.cpp" />
     <ClCompile Include="state\MainMenu.cpp" />
     <ClCompile Include="state\State.cpp" />
+    <ClCompile Include="title_map\Title.cpp" />
+    <ClCompile Include="title_map\TitleMap.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="components\animation_components\Animation.h" />
+    <ClInclude Include="components\animation_components\AnimationComponent.h" />
+    <ClInclude Include="components\hitbox_components\HitboxComponent.h" />
+    <ClInclude Include="components\hpbar_components\HpbarComponent.h" />
+    <ClInclude Include="components\movement_components\MovementComponent.h" />
+    <ClInclude Include="dependences\Dependences.h" />
     <ClInclude Include="engine\Game.h" />
+    <ClInclude Include="entities\Bonus.h" />
+    <ClInclude Include="entities\Brick.h" />
+    <ClInclude Include="entities\Enemy.h" />
     <ClInclude Include="entities\Entity.h" />
     <ClInclude Include="entities\Player.h" />
+    <ClInclude Include="entities\Throwable.h" />
+    <ClInclude Include="entities\Tree.h" />
     <ClInclude Include="resources\button\Button.h" />
-    <ClInclude Include="resources\shape\RoundRectangleShape.h" />
     <ClInclude Include="state\GameState.h" />
     <ClInclude Include="state\MainMenu.h" />
     <ClInclude Include="state\State.h" />
+    <ClInclude Include="title_map\Title.h" />
+    <ClInclude Include="title_map\TitleMap.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="resources\fonts\ARCADECLASSIC.TTF" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\images\background\mainmenu_background.png" />
+    <Image Include="resources\images\sprites\player\old_man_move.png" />
     <Image Include="resources\sprites\player\test.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -22,9 +22,6 @@
     <Filter Include="resources\button">
       <UniqueIdentifier>{580e5766-030a-481e-88e0-8d0f1d2cfcde}</UniqueIdentifier>
     </Filter>
-    <Filter Include="resources\shape">
-      <UniqueIdentifier>{14fb2023-35e9-458d-afa2-42528c9125c3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="resources\images">
       <UniqueIdentifier>{5f23316a-bde8-4bc7-8ef9-167dfecc3cf0}</UniqueIdentifier>
     </Filter>
@@ -36,6 +33,27 @@
     </Filter>
     <Filter Include="resources\images\sprites\player">
       <UniqueIdentifier>{815f4c33-8f6e-4b8f-8ab7-bf7615c239a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="components">
+      <UniqueIdentifier>{6e8d5e1d-7df5-4f4d-830c-01b0e73ebf7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="components\movement_components">
+      <UniqueIdentifier>{aff94cdc-b26a-457a-af66-4259df48f667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="components\animation_components">
+      <UniqueIdentifier>{513f1833-9b78-4cce-a36d-3529b1d5d2b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="components\hitbox_components">
+      <UniqueIdentifier>{9923c7c7-78c7-4eb0-9e79-9ad9899ece5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="title_map">
+      <UniqueIdentifier>{18292cf1-e9fa-4911-9aad-3fd3ddbaf418}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header">
+      <UniqueIdentifier>{d2e712a4-af97-4322-a61b-edc89d9fc6da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="components\hpbar_components">
+      <UniqueIdentifier>{68436b9c-95f8-44d0-88f1-d956de828069}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -63,28 +81,58 @@
     <ClCompile Include="state\GameState.cpp">
       <Filter>state</Filter>
     </ClCompile>
-    <ClCompile Include="entities\Entity.cpp">
-      <Filter>entities</Filter>
-    </ClCompile>
     <ClCompile Include="state\MainMenu.cpp">
       <Filter>state</Filter>
     </ClCompile>
     <ClCompile Include="resources\button\Button.cpp">
       <Filter>resources\button</Filter>
     </ClCompile>
-    <ClCompile Include="resources\shape\RoundRectangleShape.cpp">
-      <Filter>resources\shape</Filter>
-    </ClCompile>
     <ClCompile Include="entities\Player.cpp">
       <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\Entity.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="components\animation_components\AnimationComponent.cpp">
+      <Filter>components\animation_components</Filter>
+    </ClCompile>
+    <ClCompile Include="components\animation_components\Animation.cpp">
+      <Filter>components\animation_components</Filter>
+    </ClCompile>
+    <ClCompile Include="components\movement_components\MovementComponent.cpp">
+      <Filter>components\movement_components</Filter>
+    </ClCompile>
+    <ClCompile Include="components\hitbox_components\HitboxComponent.cpp">
+      <Filter>components\hitbox_components</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\Tree.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\Throwable.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\Brick.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\Bonus.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="entities\Enemy.cpp">
+      <Filter>entities</Filter>
+    </ClCompile>
+    <ClCompile Include="title_map\TitleMap.cpp">
+      <Filter>title_map</Filter>
+    </ClCompile>
+    <ClCompile Include="title_map\Title.cpp">
+      <Filter>title_map</Filter>
+    </ClCompile>
+    <ClCompile Include="components\hpbar_components\HpbarComponent.cpp">
+      <Filter>components\hpbar_components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\Game.h">
       <Filter>engine</Filter>
-    </ClInclude>
-    <ClInclude Include="entities\Entity.h">
-      <Filter>entities</Filter>
     </ClInclude>
     <ClInclude Include="state\GameState.h">
       <Filter>state</Filter>
@@ -98,11 +146,50 @@
     <ClInclude Include="resources\button\Button.h">
       <Filter>resources\button</Filter>
     </ClInclude>
-    <ClInclude Include="resources\shape\RoundRectangleShape.h">
-      <Filter>resources\shape</Filter>
-    </ClInclude>
     <ClInclude Include="entities\Player.h">
       <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\Entity.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="components\animation_components\AnimationComponent.h">
+      <Filter>components\animation_components</Filter>
+    </ClInclude>
+    <ClInclude Include="components\animation_components\Animation.h">
+      <Filter>components\animation_components</Filter>
+    </ClInclude>
+    <ClInclude Include="components\movement_components\MovementComponent.h">
+      <Filter>components\movement_components</Filter>
+    </ClInclude>
+    <ClInclude Include="components\hitbox_components\HitboxComponent.h">
+      <Filter>components\hitbox_components</Filter>
+    </ClInclude>
+    <ClInclude Include="dependences\Dependences.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\Tree.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\Throwable.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\Brick.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\Bonus.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="entities\Enemy.h">
+      <Filter>entities</Filter>
+    </ClInclude>
+    <ClInclude Include="title_map\TitleMap.h">
+      <Filter>title_map</Filter>
+    </ClInclude>
+    <ClInclude Include="title_map\Title.h">
+      <Filter>title_map</Filter>
+    </ClInclude>
+    <ClInclude Include="components\hpbar_components\HpbarComponent.h">
+      <Filter>components\hpbar_components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +202,9 @@
       <Filter>resources\images\backgrounds</Filter>
     </Image>
     <Image Include="resources\sprites\player\test.png">
+      <Filter>resources\images\sprites\player</Filter>
+    </Image>
+    <Image Include="resources\images\sprites\player\old_man_move.png">
       <Filter>resources\images\sprites\player</Filter>
     </Image>
   </ItemGroup>

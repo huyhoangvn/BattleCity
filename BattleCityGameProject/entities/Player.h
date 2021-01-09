@@ -9,16 +9,21 @@ class Player :
 private:
 
 protected:
-	//Init Variable
-
 	//Init Funtions
-	void initVariable();
-	void initComponent();
+	void initMovementComponent();
+	void initAnimationComponent(sf::Texture& textureSheet);
+	void initHitboxComponent();
+	void initHpbarComponent();
+
 public:
-	Player(float x, float y, sf::Texture *texture);
+	Player(float x, float y, sf::Texture &textureSheet);
 	virtual ~Player();
 
 	//Function
+	void attack();
+	void move(const DirectionState direction);
+
+	virtual void update(const float& dt);
 };
 
 #endif 

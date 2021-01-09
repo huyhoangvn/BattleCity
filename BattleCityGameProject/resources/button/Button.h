@@ -1,19 +1,7 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Network.hpp>
-
-//#include "../shape/RoundRectangleShape.h"
-
-enum ButtonState {
-	BTN_IDLE = 0,
-	BTN_HOVER = 1,
-	BTN_PRESS = 2,
-};
+#include "../../header/Dependences.h"
 
 class Button
 {
@@ -42,7 +30,7 @@ public:
 
 	//Function
 	virtual void update(const sf::Vector2f mousePosition);
-	virtual void render(sf::RenderTarget* target);
+	virtual void render(sf::RenderTarget& target);
 };
 
 #endif 
