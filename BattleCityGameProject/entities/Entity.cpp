@@ -56,23 +56,29 @@ void Entity::createHpbarComponent(float maxHp,
 	this->hpbarComponent = new HpbarComponent(maxHp, sprite, xOffset, yOffset, width, height);
 }
 
+HitboxComponent * Entity::getHitboxComponent()
+{
+	return this->hitboxComponent;
+}
+
+HpbarComponent * Entity::getHpbarComponent()
+{
+	return this->hpbarComponent;
+}
+
+MovementComponent * Entity::getMovementComponent()
+{
+	return this->movementComponent;
+}
+
+AnimationComponent * Entity::getAnimationComponent()
+{
+	return this->animationComponent;
+}
+
 void Entity::setPosition(const float x, const float y)
 {
 	this->sprite.setPosition(x, y);
 }
 
-void Entity::update(const float& dt)
-{
-}
 
-void Entity::render(sf::RenderTarget& target)
-{
-	target.draw(this->sprite);
-
-	if (this->hitboxComponent) {
-		this->hitboxComponent->render(target);
-	}
-	if (this->hpbarComponent) {
-		this->hpbarComponent->render(target);
-	}
-}

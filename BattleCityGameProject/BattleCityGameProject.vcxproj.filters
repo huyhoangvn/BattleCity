@@ -55,6 +55,15 @@
     <Filter Include="components\hpbar_components">
       <UniqueIdentifier>{68436b9c-95f8-44d0-88f1-d956de828069}</UniqueIdentifier>
     </Filter>
+    <Filter Include="builder">
+      <UniqueIdentifier>{59484a4a-da28-4250-a42c-ae7c4bfe2da8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources\images\sprites\throwable">
+      <UniqueIdentifier>{0536dbef-1af3-41df-af41-1c50792152d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources\images\sprites\environment">
+      <UniqueIdentifier>{0d7650f0-9429-4934-91b1-0b4900fed1ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="config\window.ini">
@@ -129,6 +138,9 @@
     <ClCompile Include="components\hpbar_components\HpbarComponent.cpp">
       <Filter>components\hpbar_components</Filter>
     </ClCompile>
+    <ClCompile Include="builder\ThrowableBuilder.cpp">
+      <Filter>builder</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine\Game.h">
@@ -164,9 +176,6 @@
     <ClInclude Include="components\hitbox_components\HitboxComponent.h">
       <Filter>components\hitbox_components</Filter>
     </ClInclude>
-    <ClInclude Include="dependences\Dependences.h">
-      <Filter>header</Filter>
-    </ClInclude>
     <ClInclude Include="entities\Tree.h">
       <Filter>entities</Filter>
     </ClInclude>
@@ -191,6 +200,12 @@
     <ClInclude Include="components\hpbar_components\HpbarComponent.h">
       <Filter>components\hpbar_components</Filter>
     </ClInclude>
+    <ClInclude Include="header\Dependences.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="builder\ThrowableBuilder.h">
+      <Filter>builder</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="resources\fonts\ARCADECLASSIC.TTF">
@@ -198,14 +213,26 @@
     </Font>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="resources\images\background\mainmenu_background.png">
-      <Filter>resources\images\backgrounds</Filter>
-    </Image>
     <Image Include="resources\sprites\player\test.png">
       <Filter>resources\images\sprites\player</Filter>
     </Image>
     <Image Include="resources\images\sprites\player\old_man_move.png">
       <Filter>resources\images\sprites\player</Filter>
+    </Image>
+    <Image Include="resources\images\sprites\throwable\Throwable_move_crash.png">
+      <Filter>resources\images\sprites\throwable</Filter>
+    </Image>
+    <Image Include="resources\images\sprites\environment\Bound_horizontal.png">
+      <Filter>resources\images\sprites\environment</Filter>
+    </Image>
+    <Image Include="resources\images\sprites\environment\Bound_vertical.png">
+      <Filter>resources\images\sprites\environment</Filter>
+    </Image>
+    <Image Include="resources\images\backgrounds\gamestate_background.png">
+      <Filter>resources\images\backgrounds</Filter>
+    </Image>
+    <Image Include="resources\images\backgrounds\mainmenu_background.png">
+      <Filter>resources\images\backgrounds</Filter>
     </Image>
   </ItemGroup>
 </Project>

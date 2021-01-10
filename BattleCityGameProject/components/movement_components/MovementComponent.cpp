@@ -66,6 +66,16 @@ const bool MovementComponent::getDirectionState(const DirectionState directionSt
 	return false;
 }
 
+const ActionState MovementComponent::getLastAction()
+{
+	return this->lastAction;
+}
+
+const DirectionState MovementComponent::getLastDirection()
+{
+	return this->lastDirection;
+}
+
 void MovementComponent::move(const DirectionState direction)
 {
 	if (this->lastAction != ActionState::IDLE)

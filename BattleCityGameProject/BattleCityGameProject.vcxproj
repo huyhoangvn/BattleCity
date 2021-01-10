@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BattleCityGameProject.cpp" />
+    <ClCompile Include="builder\ThrowableBuilder.cpp" />
     <ClCompile Include="components\animation_components\Animation.cpp" />
     <ClCompile Include="components\animation_components\AnimationComponent.cpp" />
     <ClCompile Include="components\hitbox_components\HitboxComponent.cpp" />
@@ -174,12 +175,12 @@
     <ClCompile Include="title_map\TitleMap.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="builder\ThrowableBuilder.h" />
     <ClInclude Include="components\animation_components\Animation.h" />
     <ClInclude Include="components\animation_components\AnimationComponent.h" />
     <ClInclude Include="components\hitbox_components\HitboxComponent.h" />
     <ClInclude Include="components\hpbar_components\HpbarComponent.h" />
     <ClInclude Include="components\movement_components\MovementComponent.h" />
-    <ClInclude Include="dependences\Dependences.h" />
     <ClInclude Include="engine\Game.h" />
     <ClInclude Include="entities\Bonus.h" />
     <ClInclude Include="entities\Brick.h" />
@@ -188,6 +189,7 @@
     <ClInclude Include="entities\Player.h" />
     <ClInclude Include="entities\Throwable.h" />
     <ClInclude Include="entities\Tree.h" />
+    <ClInclude Include="header\Dependences.h" />
     <ClInclude Include="resources\button\Button.h" />
     <ClInclude Include="state\GameState.h" />
     <ClInclude Include="state\MainMenu.h" />
@@ -199,8 +201,12 @@
     <Font Include="resources\fonts\ARCADECLASSIC.TTF" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="resources\images\background\mainmenu_background.png" />
+    <Image Include="resources\images\backgrounds\gamestate_background.png" />
+    <Image Include="resources\images\backgrounds\mainmenu_background.png" />
+    <Image Include="resources\images\sprites\environment\Bound_horizontal.png" />
+    <Image Include="resources\images\sprites\environment\Bound_vertical.png" />
     <Image Include="resources\images\sprites\player\old_man_move.png" />
+    <Image Include="resources\images\sprites\throwable\Throwable_move_crash.png" />
     <Image Include="resources\sprites\player\test.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

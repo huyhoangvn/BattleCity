@@ -35,11 +35,17 @@ public:
 		sf::Sprite& sprite, float xOffset, float yOffset, 
 		float width, float height);
 
+	//Accessor
+	HitboxComponent * getHitboxComponent();
+	HpbarComponent * getHpbarComponent();
+	MovementComponent * getMovementComponent();
+	AnimationComponent * getAnimationComponent();
+
 	//Function
 	virtual void setPosition(const float x, const float y);
 
-	virtual void update(const float& dt);
-	virtual void render(sf::RenderTarget& target);
+	virtual void update(const float& dt) = 0;
+	virtual void render(sf::RenderTarget& target) = 0;
 };
 
 #endif 

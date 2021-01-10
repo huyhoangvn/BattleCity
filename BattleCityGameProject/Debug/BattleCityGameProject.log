@@ -1,0 +1,25 @@
+﻿  BattleCityGameProject.cpp
+  ThrowableBuilder.cpp
+  Animation.cpp
+  AnimationComponent.cpp
+  HitboxComponent.cpp
+  HpbarComponent.cpp
+  MovementComponent.cpp
+  Game.cpp
+  Bonus.cpp
+  Brick.cpp
+  Enemy.cpp
+  Entity.cpp
+  Player.cpp
+  Throwable.cpp
+  Tree.cpp
+  Button.cpp
+  GameState.cpp
+  MainMenu.cpp
+  State.cpp
+  Title.cpp
+  Generating Code...
+  Compiling...
+  TitleMap.cpp
+  Generating Code...
+  BattleCityGameProject.vcxproj -> E:\Study\Programing\C C++\project\BattleCitySolution\Debug\BattleCityGameProject.exe

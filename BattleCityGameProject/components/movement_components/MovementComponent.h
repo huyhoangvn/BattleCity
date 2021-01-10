@@ -35,6 +35,8 @@ public:
 	const bool getMovementState(const ActionState actionState, const DirectionState directionState = DirectionState::UNKNOWN) const;
 	const bool getActionState(const ActionState actionState) const;
 	const bool getDirectionState(const DirectionState actionState) const;
+	const ActionState getLastAction();
+	const DirectionState getLastDirection();
 
 	void attack();
 	void idle();

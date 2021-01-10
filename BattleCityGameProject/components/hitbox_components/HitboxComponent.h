@@ -26,9 +26,14 @@ public:
 	virtual ~HitboxComponent();
 
 	//Accessor
-	bool checkIntersect(const sf::FloatRect& frect);
+	sf::Vector2f getPosition();
+	sf::Vector2f getHalfSize();
+
+	bool checkCollision(HitboxComponent* otherHitbox, float push);
 
 	//Function
+	void moveHitBoxSpritePosition(const float x, const float y);
+
 	void update();
 	void render(sf::RenderTarget &target);
 };

@@ -1,5 +1,5 @@
-#ifndef DEPENDENCE_H
-#define DEPENDENCE_H
+#ifndef DEPENDENCES_H
+#define DEPENDENCES_H
 
 #include <iostream>
 #include <fstream>
@@ -40,6 +40,12 @@ enum class HpbarPlacement {
 	BENEATH,
 	LEFT,
 	RIGHT
+};
+
+enum class BulletType {
+	UNKNOWN = 0,
+	NORMAL,
+	SPEEDY
 };
 
 #endif 

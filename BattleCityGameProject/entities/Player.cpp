@@ -1,5 +1,10 @@
 #include "Player.h"
 
+void Player::initVariable()
+{
+	this->throwableBuilder = nullptr;
+}
+
 void Player::initMovementComponent()
 {
 	this->createMovementComponent(150.f, 50.f, 25.f);
@@ -28,27 +33,31 @@ void Player::initHpbarComponent()
 	this->hpbarComponent->changeOffset(HpbarPlacement::ABOVE);
 }
 
-Player::Player(float x, float y, sf::Texture& textureSheet)
+Player::Player(float x, float y, sf::Texture& textureSheet) 
 	:Entity()
 {
 	this->setPosition(x, y);
 
+	this->initVariable();
+
 	this->initMovementComponent();
-
 	this->initAnimationComponent(textureSheet);
-
 	this->initHitboxComponent();
-
 	this->initHpbarComponent();
+
+	this->initThrowableBuilder();
 }
 
 Player::~Player()
 {
-}
+	delete this->throwableBuilder;
+} 
 
 void Player::attack()
 {
+	//bug here
 	this->movementComponent->attack();
+	this->throwableBuilder->moveThrowable();
 }
 
 void Player::move(const DirectionState direction)
@@ -56,9 +65,39 @@ void Player::move(const DirectionState direction)
 	this->movementComponent->move(direction);
 }
 
+void Player::createThrowable(float speed, sf::Texture& textureSheet)
+{
+	this->throwableBuilder->createThrowable(speed, textureSheet);
+}
+
+
+void Player::initThrowableBuilder()
+{
+	this->throwableBuilder = new ThrowableBuilder(this);
+}
+
+void Player::checkCollision(Entity* otherEntity, float push)
+{
+	if (otherEntity != nullptr) {
+		HitboxComponent* otherHitbox = otherEntity->getHitboxComponent();
+		if (otherHitbox != nullptr) {
+			this->hitboxComponent->checkCollision(otherHitbox, push);
+			if (this->throwableBuilder->checkCollision(otherEntity, push)) {
+				HpbarComponent* otherHpbar = otherEntity->getHpbarComponent();
+				if (otherHpbar) {
+					//Test here
+					otherHpbar->changeCurrentHp(-10);
+				}
+			}
+		}
+	}
+}
+
 void Player::update(const float& dt)
 {
 	this->movementComponent->update(dt);
+
+	this->throwableBuilder->update(dt);
 
 	//Test
 	this->hpbarComponent->changeOffset(HpbarPlacement::ABOVE);
@@ -88,10 +127,25 @@ void Player::update(const float& dt)
 	}
 
 	//Test
-	this->hpbarComponent->changeCurrentHp(-1);
 
 	this->hitboxComponent->update();
+
 	this->hpbarComponent->update();
+}
+
+void Player::render(sf::RenderTarget& target)
+{
+	target.draw(this->sprite);
+
+	if (this->throwableBuilder) {
+		this->throwableBuilder->render(target);
+	}
+	if (this->hitboxComponent) {
+		this->hitboxComponent->render(target);
+	}
+	if (this->hpbarComponent) {
+		this->hpbarComponent->render(target);
+	}
 }
 
 
